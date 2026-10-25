@@ -25,7 +25,6 @@
       --ink: #1c3b50;
       --muted: #5e7582;
       --pale: #eff8f4;
-      --header-bg: #dcece7;
       --section-green: #e4f1eb;
       --line: #dce9e5;
       --white: #ffffff;
@@ -132,51 +131,30 @@
        3. KOPFZEILE UND NAVIGATION
        Logo-Datei: images/logo-race-fun.png
        ========================================================= */
-    .site-header {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      min-height: 82px;
-      padding: 8px 18px;
-      background: var(--header-bg);
-      border-bottom: 1px solid #c9dfd7;
-    }
-
-    .brand {
+    .menu-toggle {
+      position: absolute;
+      z-index: 5;
+      top: 22px;
+      right: max(22px, calc((100vw - var(--page-width)) / 2));
       display: inline-flex;
       align-items: center;
-      text-decoration: none;
-    }
-
-    .brand-logo {
-      display: block;
-      width: 164px;
-      max-height: 66px;
-      object-fit: contain;
-    }
-
-    .menu-toggle {
-      display: none;
-      align-items: center;
       justify-content: center;
-      width: 44px;
-      height: 44px;
+      width: 48px;
+      height: 48px;
       padding: 0;
-      border: 1px solid #b8d4ca;
-      border-radius: 12px;
-      background: #edf6f2;
-      color: var(--deep);
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      border-radius: 13px;
+      background: rgba(24, 61, 77, 0.82);
+      color: #ffffff;
       cursor: pointer;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.16);
     }
 
     .menu-toggle-lines,
     .menu-toggle-lines::before,
     .menu-toggle-lines::after {
       display: block;
-      width: 21px;
+      width: 22px;
       height: 2px;
       border-radius: 2px;
       background: currentColor;
@@ -185,6 +163,8 @@
 
     .menu-toggle-lines {
       position: relative;
+      font-size: 0;
+      line-height: 0;
     }
 
     .menu-toggle-lines::before,
@@ -604,31 +584,28 @@
         --page-gutter: 32px;
       }
 
-      .site-header {
-        align-items: center;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 12px;
-        padding: 10px 16px;
-      }
-
       .menu-toggle {
-        display: inline-flex;
-        margin-left: auto;
-      }
-
-      .brand-logo {
-        width: 142px;
+        top: 14px;
+        right: 16px;
+        width: 44px;
+        height: 44px;
       }
 
       .navigation {
+        position: absolute;
+        z-index: 6;
+        top: 66px;
+        right: 16px;
         display: none;
-        width: 100%;
+        width: min(260px, calc(100vw - 32px));
         flex-direction: column;
         align-items: stretch;
         gap: 0;
-        padding: 8px 0 4px;
-        border-top: 1px solid #c9dfd7;
+        padding: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 14px;
+        background: rgba(24, 61, 77, 0.96);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
       }
 
       .navigation.is-open {
@@ -636,13 +613,16 @@
       }
 
       .navigation a {
-        padding: 11px 8px;
+        padding: 11px 10px;
+        color: #ffffff;
         font-size: 0.92rem;
       }
 
       .navigation .navigation-cta {
         margin-top: 5px;
         padding: 10px 14px;
+        background: var(--mint);
+        color: #123a49;
         text-align: center;
       }
 
@@ -737,27 +717,21 @@
        WEBSITE-INHALT
        ========================================================= -->
 
-  <!-- 1. KOPFZEILE -->
-  <header class="site-header wrap">
-    <a class="brand" href="#" aria-label="Race&Fun Thumersbach Startseite">
-      <img
-        class="brand-logo"
-        src="images/logo-race-fun.png"
-        alt="Race&Fun Thumersbach"
-      >
-    </a>
+  <!-- Navigation liegt jetzt direkt über dem Titelbild. -->
+  <button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-controls="main-navigation" aria-expanded="false">
+    <span class="menu-toggle-lines" aria-hidden="true"></span>
+  </button>
 
-    <button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-controls="main-navigation" aria-expanded="false">\n      <span class="menu-toggle-lines" aria-hidden="true"></span>\n    </button>\n\n    <nav class="navigation" id="main-navigation" aria-label="Hauptnavigation">
+  <nav class="navigation" id="main-navigation" aria-label="Hauptnavigation">
       <a href="#events">Veranstaltungen</a>
       <a href="#verein">Verein</a>
       <a href="#partner">Partner</a>
       <a href="#links">Kontakt</a>
       <a class="navigation-cta" href="#links">Anmeldung ↗</a>
-    </nav>
-  </header>
+  </nav>
 
   <main>
-    <!-- 2. TITELBEREICH: Titelbild und Slogan -->
+    <!-- Titelbereich: Titelbild, Logo, Slogan und Menüsymbol -->
     <section class="hero">
       <div class="wrap hero-content">
         <img
