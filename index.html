@@ -301,7 +301,7 @@
     .hero-content .button {
       position: absolute;
       left: 50%;
-      bottom: 12px;
+      bottom: 0;
       transform: translateX(-50%);
       white-space: nowrap;
     }
@@ -345,10 +345,11 @@
 
     .event-image {
       position: relative;
-      height: 300px;
+      width: 100%;
+      height: 420px;
       background-color: #d9ece8;
-      background-position: center 42%;
-      background-size: cover;
+      background-position: center;
+      background-size: contain;
       background-repeat: no-repeat;
     }
 
@@ -670,7 +671,7 @@
       }
 
       .hero-content .button {
-        bottom: 8px;
+        bottom: 0;
       }
 
       .hero-logo {
@@ -692,8 +693,9 @@
       }
 
       .event-image {
-        height: 320px;
-        background-position: center 42%;
+        height: 380px;
+        background-position: center;
+        background-size: contain;
       }
 
       .about-grid {
