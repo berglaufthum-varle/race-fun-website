@@ -1,159 +1,62 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#10251d">
-  <meta name="description" content="Race&Fun Thumersbach – Wo Bewegung verbindet. Berglauf, gemeinsame Sporterlebnisse und Events in Zell am See.">
-  <title>Race&Fun Thumersbach – Wo Bewegung verbindet</title>
-  <style>
-    :root{--forest:#10251d;--green:#b9ef62;--cream:#f5f2e9;--muted:#bdc9c0;--card:#1b3429;--line:#365044}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:var(--forest);color:var(--cream);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}
-    a{color:inherit}
-    .wrap{width:min(1120px,calc(100% - 40px));margin-inline:auto}
-    header{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:24px 0}
-    .brand{font-weight:900;letter-spacing:-.05em;font-size:1.35rem;text-decoration:none}
-    .brand span{color:var(--green)}
-    nav{display:flex;gap:22px;flex-wrap:wrap}
-    nav a{font-size:.9rem;color:var(--muted);text-decoration:none}
-    nav a:hover{color:var(--green)}
-    .hero{padding:74px 0 88px;position:relative;overflow:hidden}
-    .hero:after{content:"";position:absolute;width:470px;height:470px;border:1px solid #345044;border-radius:50%;right:-120px;top:15px;box-shadow:0 0 0 55px #ffffff03,0 0 0 110px #ffffff02;pointer-events:none}
-    .eyebrow{color:var(--green);font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.18em}
-    h1{font-size:clamp(3rem,8vw,6.6rem);line-height:.98;letter-spacing:-.075em;max-width:850px;margin:22px 0}
-    h1 span{color:var(--green)}
-    .intro{max-width:600px;color:var(--muted);font-size:1.12rem}
-    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-    .button{display:inline-flex;align-items:center;justify-content:center;padding:13px 19px;border-radius:999px;text-decoration:none;font-weight:800;font-size:.92rem;border:1px solid var(--line)}
-    .button.primary{background:var(--green);color:var(--forest);border-color:var(--green)}
-    .button:hover{transform:translateY(-2px)}
-    .event-feature{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:stretch;padding:28px;border:1px solid var(--line);border-radius:26px;background:linear-gradient(135deg,#203d2e,#162b22)}
-    .event-feature h2{font-size:clamp(2rem,4vw,3.3rem);line-height:1.05;letter-spacing:-.05em;margin:12px 0}
-    .event-feature p{color:var(--muted)}
-    .event-date{background:var(--green);color:var(--forest);border-radius:20px;padding:30px;display:flex;flex-direction:column;justify-content:center;min-height:220px}
-    .event-date small{font-weight:900;text-transform:uppercase;letter-spacing:.12em}
-    .event-date strong{font-size:clamp(2.5rem,5vw,4.2rem);line-height:1.05;letter-spacing:-.07em;margin:12px 0}
-    .event-date span{font-weight:700}
-    section{padding:70px 0}
-    .section-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:26px}
-    h2{font-size:clamp(2rem,4vw,3rem);line-height:1.1;letter-spacing:-.055em;margin:8px 0}
-    .section-head p{max-width:430px;color:var(--muted);margin:0}
-    .events{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .event-card{padding:24px;border:1px solid var(--line);border-radius:20px;background:var(--card);min-height:205px;display:flex;flex-direction:column}
-    .event-card .tag{color:var(--green);font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;font-weight:900}
-    .event-card h3{font-size:1.35rem;line-height:1.2;margin:14px 0 8px}
-    .event-card p{color:var(--muted);font-size:.94rem;margin:0 0 18px}
-    .event-card a{margin-top:auto;color:var(--green);text-decoration:none;font-weight:800}
-    .about{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:start;border-top:1px solid var(--line)}
-    .about p{color:var(--muted);margin-top:0}
-    .quicklinks{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-    .quicklinks a{padding:22px;border-radius:16px;border:1px solid var(--line);text-decoration:none;background:#ffffff05;font-weight:800}
-    .quicklinks a span{display:block;color:var(--green);font-size:.8rem;margin-bottom:8px}
-    footer{border-top:1px solid var(--line);padding:30px 0 40px;color:var(--muted);font-size:.85rem;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-    footer a{color:var(--muted)}
-    @media(max-width:760px){header{align-items:flex-start;flex-direction:column}nav{gap:14px}.hero{padding:48px 0 60px}.event-feature,.about{grid-template-columns:1fr}.event-date{min-height:180px}.events,.quicklinks{grid-template-columns:1fr}.section-head{align-items:flex-start;flex-direction:column}section{padding:52px 0}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<meta name="description" content="Race&Fun Thumersbach – Wo Bewegung verbindet. Berglauf und gemeinsame Sporterlebnisse in Zell am See.">
+<title>Race&Fun Thumersbach – Wo Bewegung verbindet</title>
+<style>
+:root{--mint:#55b9a4;--green:#218f67;--deep:#183d4d;--ink:#1c3b50;--muted:#5e7582;--pale:#eff8f4;--line:#dce9e5;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font-family:Inter,Arial,sans-serif;line-height:1.6}a{color:inherit}.wrap{width:min(1180px,calc(100% - 44px));margin-inline:auto}
+header{height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px;background:#fff;position:relative;z-index:2}.brand{display:flex;align-items:center;text-decoration:none;gap:10px}.brand img{width:164px;max-height:66px;object-fit:contain}.brand-fallback{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:-.04em;color:var(--deep)}.brand-fallback .mark{background:linear-gradient(135deg,var(--mint) 0 48%,var(--deep) 48%);color:white;padding:9px 13px;border-radius:28px;font-size:.88rem;line-height:1.15}.brand-fallback small{display:block;letter-spacing:.2em;font-size:.52rem;text-align:center}
+nav{display:flex;align-items:center;gap:25px}nav a{text-decoration:none;font-size:.91rem;color:#294758}nav a:hover{color:var(--green)}.nav-cta{background:var(--green);color:white!important;padding:10px 17px;border-radius:30px;font-weight:800}
+.hero{position:relative;isolation:isolate;min-height:465px;display:flex;align-items:center;overflow:hidden;background:#dceff0}.hero:before{content:"";position:absolute;inset:0;z-index:-2;background-image:linear-gradient(90deg,rgba(224,246,246,.96) 0%,rgba(224,246,246,.82) 35%,rgba(224,246,246,.08) 76%),url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2200&q=85');background-size:cover;background-position:center 54%}.hero:after{content:"";position:absolute;inset:auto 0 0;height:5px;background:linear-gradient(90deg,var(--mint),#d5eee5,var(--green));z-index:-1}
+.hero-content{padding:54px 0 58px;max-width:650px}.hero-logo{width:240px;max-height:110px;object-fit:contain;object-position:left center;margin-bottom:16px}.hero h1{font-size:clamp(2.9rem,6vw,5.6rem);line-height:.98;letter-spacing:-.065em;color:var(--deep);margin:0 0 16px}.hero h1 em{font-style:italic;color:#218f7b}.tagline{font-weight:800;letter-spacing:.18em;font-size:.88rem;text-transform:uppercase;color:#24495a;margin:0 0 27px}.button{display:inline-flex;align-items:center;justify-content:center;gap:12px;text-decoration:none;border:1px solid var(--green);border-radius:30px;padding:12px 20px;font-weight:800;font-size:.91rem;transition:transform .18s,box-shadow .18s}.button:hover{transform:translateY(-2px);box-shadow:0 7px 18px #183d4d18}.button.primary{background:var(--green);color:#fff}
+section{padding:54px 0}.section-top{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:24px}.eyebrow{font-size:.75rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase;color:var(--green)}h2{font-size:clamp(1.9rem,3.5vw,2.8rem);line-height:1.1;letter-spacing:-.045em;margin:6px 0 0;color:var(--deep)}.text-link{font-size:.9rem;font-weight:800;color:var(--green);text-decoration:none;white-space:nowrap}
+.events{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.event-card{border:1px solid #e0eae7;border-radius:13px;overflow:hidden;background:#fff;box-shadow:0 4px 14px #173d4d0d;display:flex;flex-direction:column;min-width:0}.event-image{height:170px;position:relative;background:#d9ece8 center/cover no-repeat}.event-image.run{background-image:url('https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=900&q=80')}.event-image.bike{background-image:url('https://images.unsplash.com/photo-1544191696-15693072a6f8?auto=format&fit=crop&w=900&q=80')}.event-image.ski{background-image:url('https://images.unsplash.com/photo-1551524164-6cf2ac7c7b6b?auto=format&fit=crop&w=900&q=80')}.date-badge,.status-badge{position:absolute;top:12px;left:12px;background:var(--green);color:#fff;border-radius:9px;padding:7px 10px;font-size:.78rem;font-weight:900;line-height:1.25}.date-badge strong{display:block;font-size:1.5rem}.status-badge{border-radius:20px}.event-body{padding:17px 18px 19px;display:flex;flex-direction:column;flex:1}.event-body h3{margin:0 0 5px;font-size:1.15rem;color:var(--deep)}.event-body p{font-size:.91rem;color:var(--muted);margin:0 0 15px}.event-meta{font-size:.8rem;color:#506a77;margin-top:auto;padding-top:10px}.event-meta span{display:block;margin-top:4px}.event-body .button{align-self:flex-start;margin-top:15px;padding:8px 14px;font-size:.81rem}
+.about-band{background:linear-gradient(110deg,#f1f9f5,#e9f6f1)}.about-grid{display:grid;grid-template-columns:1.1fr 1fr .8fr;gap:34px;align-items:center}.about-copy p{color:var(--muted);font-size:.94rem}.activity-list{border-left:1px solid #c9e0d8;padding-left:28px}.activity{display:flex;gap:14px;align-items:center;margin:14px 0}.activity-icon{width:42px;height:42px;flex:0 0 42px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-size:1.2rem}.activity strong{display:block;font-size:.91rem}.activity small{color:var(--muted)}.slogan-card{padding:28px 20px;text-align:center;color:#247c70;font-size:1.7rem;font-weight:900;font-style:italic;line-height:1.15;transform:rotate(-2deg)}.slogan-card span{display:block;font-style:normal;font-size:2rem;margin-top:12px}
+.partners{padding-top:42px;padding-bottom:42px}.partner-logos{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;margin-top:24px}.partner-placeholder{min-width:120px;text-align:center;color:#61717a;font-weight:800;font-size:.95rem;padding:10px 18px;border-right:1px solid var(--line)}.partner-note{font-size:.78rem;color:var(--muted);font-weight:500}
+.quicklinks{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.quicklinks a{border:1px solid var(--line);border-radius:13px;padding:20px;text-decoration:none;background:#fff;box-shadow:0 3px 12px #183d4d08}.quicklinks span{display:block;font-size:.72rem;color:var(--green);font-weight:900;letter-spacing:.12em;margin-bottom:5px}.quicklinks strong{color:var(--deep)}
+footer{background:var(--deep);color:#e7f2ef;padding:27px 0} .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:.8rem}.footer-brand{font-weight:900;letter-spacing:.02em}.footer-brand span{color:#75d3b8}footer a{color:#e7f2ef}
+@media(max-width:780px){header{height:auto;min-height:76px;padding-top:10px;padding-bottom:10px;align-items:flex-start;flex-direction:column}.brand img{width:142px}nav{gap:13px;flex-wrap:wrap}nav a{font-size:.82rem}.nav-cta{padding:7px 12px}.hero{min-height:430px}.hero:before{background-image:linear-gradient(90deg,rgba(224,246,246,.95),rgba(224,246,246,.72) 58%,rgba(224,246,246,.22)),url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80')}.hero-content{padding:42px 0}.hero-logo{width:190px}.events{grid-template-columns:1fr}.event-image{height:190px}.about-grid{grid-template-columns:1fr;gap:20px}.activity-list{border-left:0;padding-left:0}.slogan-card{display:none}.section-top{align-items:flex-start;flex-direction:column}section{padding:42px 0}.quicklinks{grid-template-columns:1fr}.partner-logos{justify-content:center}.partner-placeholder{border-right:0;border-bottom:1px solid var(--line);min-width:40%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+</style>
 </head>
 <body>
-  <header class="wrap">
-    <a class="brand" href="#" aria-label="Race and Fun Startseite">RACE<span>&</span>FUN</a>
-    <nav aria-label="Hauptnavigation">
-      <a href="#events">Events</a>
-      <a href="#verein">Über uns</a>
-      <a href="#links">Anmeldung & Fotos</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero wrap">
-      <div class="eyebrow">Sport- und Freizeitverein · Thumersbach</div>
-      <h1>Wo Bewegung<br><span>verbindet.</span></h1>
-      <p class="intro">Gemeinsam draußen sein, persönliche Ziele erreichen und sportliche Erlebnisse teilen. Race&Fun bringt Bewegung nach Thumersbach und Zell am See – unkompliziert, mit Freude und für alle, die gern dabei sind.</p>
-      <div class="actions">
-        <a class="button primary" href="#events">Unsere Events entdecken ↘</a>
-        <a class="button" href="#verein">Lerne Race&Fun kennen</a>
-      </div>
-    </section>
-
-    <section class="wrap" aria-labelledby="next-event">
-      <div class="event-feature">
-        <div>
-          <div class="eyebrow">Nächstes Highlight</div>
-          <h2 id="next-event">Berglauf<br>Thumersbach</h2>
-          <p>Gemeinsam hinauf, gemeinsam ankommen. Wir freuen uns auf die nächste Runde am Ronachkopf – mit sportlicher Herausforderung und guter Stimmung.</p>
-          <div class="actions">
-            <a class="button primary" href="#links">Infos & Anmeldung</a>
-          </div>
-        </div>
-        <div class="event-date">
-          <small>Termin vormerken</small>
-          <strong>12. Juni<br>2027</strong>
-          <span>Samstag · Thumersbach</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="wrap" id="events">
-      <div class="section-head">
-        <div><div class="eyebrow">Gemeinsam aktiv</div><h2>Unsere Events</h2></div>
-        <p>Sportliche Erlebnisse, die Menschen zusammenbringen. Hier findest du unsere aktuellen Veranstaltungen.</p>
-      </div>
-      <div class="events">
-        <article class="event-card">
-          <div class="tag">12. Juni 2027</div>
-          <h3>Berglauf Thumersbach</h3>
-          <p>Rauf auf den Berg, rein ins Erlebnis. Alle Infos zum nächsten Lauf folgen hier.</p>
-          <a href="#links">Event-Infos ↗</a>
-        </article>
-        <article class="event-card">
-          <div class="tag">In Planung</div>
-          <h3>Event #2</h3>
-          <p>Ein weiterer Anlass für Bewegung, Natur und Gemeinschaft. Details folgen.</p>
-          <a href="mailto:info@race-fun.com">Bleib in Kontakt ↗</a>
-        </article>
-        <article class="event-card">
-          <div class="tag">In Planung</div>
-          <h3>Event #3</h3>
-          <p>Neue Ideen sind willkommen – wir halten dich über kommende Events am Laufenden.</p>
-          <a href="mailto:info@race-fun.com">Bleib in Kontakt ↗</a>
-        </article>
-      </div>
-    </section>
-
-    <section class="about wrap" id="verein">
-      <div><div class="eyebrow">Wer wir sind</div><h2>Sport verbindet.<br>Menschen auch.</h2></div>
-      <div>
-        <p>Race&Fun Thumersbach ist ein Sport- und Freizeitverein aus Zell am See. Wir möchten die Freude an Bewegung stärken, Menschen zusammenbringen und sportliche Herausforderungen schaffen, die man gemeinsam angehen kann.</p>
-        <p>Ob beim Berglauf oder bei zukünftigen Hobby-Sportevents: Bei uns stehen das Miteinander, die Natur und der Spaß an der Sache im Mittelpunkt.</p>
-      </div>
-    </section>
-
-    <section class="wrap" id="links">
-      <div class="section-head">
-        <div><div class="eyebrow">Alles auf einen Blick</div><h2>Du bist dabei?</h2></div>
-        <p>Anmeldung, Fotos und Ergebnisse bleiben auf ihren bisherigen Seiten erreichbar. Die endgültigen Links ergänzen wir, sobald wir sie geprüft haben.</p>
-      </div>
-      <div class="quicklinks">
-        <a href="https://www.race-fun.com/" target="_blank" rel="noopener"><span>01 / MITMACHEN</span>Anmeldung ↗</a>
-        <a href="https://www.race-fun.com/" target="_blank" rel="noopener"><span>02 / ERLEBEN</span>Fotogalerie ↗</a>
-        <a href="https://www.race-fun.com/" target="_blank" rel="noopener"><span>03 / NACHLESEN</span>Ergebnisse ↗</a>
-      </div>
-    </section>
-
-    <section class="wrap" id="partner">
-      <div class="section-head">
-        <div><div class="eyebrow">Danke</div><h2>Mit Rückenwind von euch.</h2></div>
-        <p>Ein herzliches Dankeschön an alle Sponsoren, Unterstützerinnen, Unterstützer und freiwilligen Helfer, die unsere Veranstaltungen möglich machen.</p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="wrap">
-    <span>© <span id="year"></span> Sport- und Freizeitverein Race&Fun Thumersbach</span>
-    <span><a href="mailto:info@race-fun.com">Kontakt</a> · <a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Nach oben ↑</a></span>
-  </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-</body>
-</html>
+<header class="wrap">
+<a class="brand" href="#" aria-label="Race&Fun Thumersbach Startseite">
+  <span class="brand-fallback"><span class="mark">▲ RACE&FUN<small>THUMERSBACH</small></span></span>
+</a>
+<nav aria-label="Hauptnavigation">
+<a href="#events">Veranstaltungen</a><a href="#verein">Verein</a><a href="#partner">Partner</a><a href="#links">Kontakt</a><a class="nav-cta" href="#links">Anmeldung ↗</a>
+</nav>
+</header>
+<main>
+<section class="hero">
+<div class="wrap hero-content">
+<div class="hero-logo" aria-label="Race&Fun Thumersbach"> <span class="brand-fallback"><span class="mark">▲ RACE&FUN<small>THUMERSBACH</small></span></span></div>
+<h1>Wo Bewegung<br><em>verbindet.</em></h1>
+<p class="tagline">Sport · Natur · Gemeinschaft</p>
+<a class="button primary" href="#events">Unsere Veranstaltungen <span aria-hidden="true">→</span></a>
+</div>
+</section>
+<section class="wrap" id="events">
+<div class="section-top"><div><div class="eyebrow">Unsere Veranstaltungen</div><h2>Gemeinsam aktiv in den Bergen</h2></div><a class="text-link" href="#events">Alle Veranstaltungen ↗</a></div>
+<div class="events">
+<article class="event-card"><div class="event-image run"><div class="date-badge"><strong>12</strong> JUN<br>2027</div></div><div class="event-body"><h3>Berglauf Thumersbach</h3><p>Auf zum Gipfel – ein sportliches Erlebnis für alle, die die Natur lieben.</p><div class="event-meta"><span>⌖ Wanderparkplatz Hundstein, Thumersbacher Talende</span><span>◴ Start ab 10:00 Uhr</span></div><a class="button" href="#links">Details & Anmeldung →</a></div></article>
+<article class="event-card"><div class="event-image bike"><div class="status-badge">In Planung</div></div><div class="event-body"><h3>Mountainbike-Event</h3><p>Action, Natur und Fahrspaß in der Region.</p><div class="event-meta"><span>⌖ Ronachkopf & Umgebung</span><span>◷ Termin folgt</span></div><a class="button" href="#links">Mehr erfahren →</a></div></article>
+<article class="event-card"><div class="event-image ski"><div class="status-badge">In Planung</div></div><div class="event-body"><h3>Skitouren-Event</h3><p>Gemeinsam auf die Berge – mit Ausdauer und Teamgeist.</p><div class="event-meta"><span>⌖ Region Zell am See</span><span>◷ Termin folgt</span></div><a class="button" href="#links">Mehr erfahren →</a></div></article>
+</div>
+</section>
+<section class="about-band" id="verein"><div class="wrap about-grid">
+<div class="about-copy"><div class="eyebrow">Über Race&Fun Thumersbach</div><h2>Mehr als nur ein Verein</h2><p>Wir sind ein Sport- und Freizeitverein aus Thumersbach und eine Gruppe von Freunden, die gemeinsam sportliche Herausforderungen erleben und die Freude an der Bewegung in unserer Region teilen.</p><a class="text-link" href="#links">Mehr über uns →</a></div>
+<div class="activity-list"><div class="activity"><div class="activity-icon">△</div><div><strong>Bergläufe & Trailruns</strong><small>Für Einsteiger und Profis</small></div></div><div class="activity"><div class="activity-icon">♧</div><div><strong>Mountainbike-Events</strong><small>Natur, Technik, Fahrspaß</small></div></div><div class="activity"><div class="activity-icon">❄</div><div><strong>Skitouren-Events</strong><small>Gemeinsam die Berge entdecken</small></div></div></div>
+<div class="slogan-card">Gemeinsam<br>mehr erreichen!<span>⌁⌁⌁</span></div>
+</div></section>
+<section class="wrap partners" id="partner"><div class="eyebrow">Unsere Partner</div><h2>Sponsoren und Unterstützer</h2><div class="partner-logos"><div class="partner-placeholder">Zell am See</div><div class="partner-placeholder">SalzburgerLand</div><div class="partner-placeholder">Raiffeisen</div><div class="partner-placeholder">Enzianhütte</div><div class="partner-placeholder">Bründl Sports</div><div class="partner-placeholder partner-note">Euer Logo<br>könnte hier stehen</div></div></section>
+<section class="wrap" id="links"><div class="section-top"><div><div class="eyebrow">Alles auf einen Blick</div><h2>Du bist dabei?</h2></div><p style="max-width:440px;color:var(--muted);margin:0">Anmeldung, Fotos und Ergebnisse findest du über die folgenden Links. Die endgültigen Zieladressen ergänzen wir noch.</p></div><div class="quicklinks"><a href="https://www.race-fun.com/" target="_blank" rel="noopener"><span>01 / MITMACHEN</span><strong>Anmeldung ↗</strong></a><a href="https://www.race-fun.com/" target="_blank" rel="noopener"><span>02 / ERLEBEN</span><strong>Fotogalerie ↗</strong></a><a href="https://www.race-fun.com/" target="_blank" rel="noopener"><span>03 / NACHLESEN</span><strong>Ergebnisse ↗</strong></a></div></section>
+</main>
+<footer><div class="wrap footer-inner"><div><div class="footer-brand">RACE<span>&FUN</span> THUMERSBACH</div><div>Sport- und Freizeitverein Race&Fun Thumersbach · ZVR-Nr. 1064348748</div><div>Entfeldweg 13, 5700 Zell am See</div></div><div><a href="mailto:info@race-fun.com">Kontakt</a> &nbsp;·&nbsp; <a href="#links">Impressum</a> &nbsp;·&nbsp; <a href="#links">Datenschutz</a></div><div>© <span id="year"></span> Race&Fun Thumersbach</div></div></footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body></html>
