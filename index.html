@@ -25,6 +25,7 @@
       --ink: #1c3b50;
       --muted: #5e7582;
       --pale: #eff8f4;
+      --header-bg: #dcece7;
       --section-green: #e4f1eb;
       --line: #dce9e5;
       --white: #ffffff;
@@ -139,7 +140,9 @@
       justify-content: space-between;
       gap: 24px;
       min-height: 82px;
-      background: var(--white);
+      padding: 8px 18px;
+      background: var(--header-bg);
+      border-bottom: 1px solid #c9dfd7;
     }
 
     .brand {
@@ -153,6 +156,57 @@
       width: 164px;
       max-height: 66px;
       object-fit: contain;
+    }
+
+    .menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      border: 1px solid #b8d4ca;
+      border-radius: 12px;
+      background: #edf6f2;
+      color: var(--deep);
+      cursor: pointer;
+    }
+
+    .menu-toggle-lines,
+    .menu-toggle-lines::before,
+    .menu-toggle-lines::after {
+      display: block;
+      width: 21px;
+      height: 2px;
+      border-radius: 2px;
+      background: currentColor;
+      transition: transform 0.18s ease;
+    }
+
+    .menu-toggle-lines {
+      position: relative;
+    }
+
+    .menu-toggle-lines::before,
+    .menu-toggle-lines::after {
+      position: absolute;
+      left: 0;
+      content: "";
+    }
+
+    .menu-toggle-lines::before { transform: translateY(-7px); }
+    .menu-toggle-lines::after { transform: translateY(7px); }
+
+    .menu-toggle[aria-expanded="true"] .menu-toggle-lines {
+      background: transparent;
+    }
+
+    .menu-toggle[aria-expanded="true"] .menu-toggle-lines::before {
+      transform: rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] .menu-toggle-lines::after {
+      transform: rotate(-45deg);
     }
 
     .navigation {
@@ -551,10 +605,16 @@
       }
 
       .site-header {
-        align-items: flex-start;
-        flex-direction: column;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 10px 16px;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+        margin-left: auto;
       }
 
       .brand-logo {
@@ -562,16 +622,28 @@
       }
 
       .navigation {
-        flex-wrap: wrap;
-        gap: 13px;
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px 0 4px;
+        border-top: 1px solid #c9dfd7;
+      }
+
+      .navigation.is-open {
+        display: flex;
       }
 
       .navigation a {
-        font-size: 0.82rem;
+        padding: 11px 8px;
+        font-size: 0.92rem;
       }
 
       .navigation .navigation-cta {
-        padding: 7px 12px;
+        margin-top: 5px;
+        padding: 10px 14px;
+        text-align: center;
       }
 
       .hero {
@@ -675,7 +747,7 @@
       >
     </a>
 
-    <nav class="navigation" aria-label="Hauptnavigation">
+    <button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-controls="main-navigation" aria-expanded="false">\n      <span class="menu-toggle-lines" aria-hidden="true"></span>\n    </button>\n\n    <nav class="navigation" id="main-navigation" aria-label="Hauptnavigation">
       <a href="#events">Veranstaltungen</a>
       <a href="#verein">Verein</a>
       <a href="#partner">Partner</a>
@@ -895,6 +967,25 @@
   <!-- 8. KLEINES SCRIPT: aktuelles Jahr automatisch anzeigen -->
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Hamburger-Menü auf Handys öffnen und beim Link-Klick schließen
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navigation = document.querySelector(".navigation");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", String(!isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "Menü öffnen" : "Menü schließen");
+      navigation.classList.toggle("is-open", !isOpen);
+    });
+
+    navigation.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Menü öffnen");
+        navigation.classList.remove("is-open");
+      });
+    });
   </script>
 </body>
 </html>
