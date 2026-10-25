@@ -136,7 +136,7 @@
       z-index: 5;
       top: 22px;
       right: max(22px, calc((100vw - var(--page-width)) / 2));
-      display: inline-flex;
+      display: none;
       align-items: center;
       justify-content: center;
       width: 48px;
@@ -190,6 +190,10 @@
     }
 
     .navigation {
+      position: absolute;
+      z-index: 6;
+      top: 22px;
+      right: max(22px, calc((100vw - var(--page-width)) / 2));
       display: flex;
       align-items: center;
       gap: 25px;
@@ -222,7 +226,7 @@
       isolation: isolate;
       display: flex;
       align-items: center;
-      min-height: 465px;
+      min-height: 590px;
       overflow: hidden;
       background: #dceff0;
     }
@@ -254,9 +258,10 @@
     }
 
     .hero-content {
+      width: 100%;
       max-width: 650px;
-      padding-top: 54px;
-      padding-bottom: 58px;
+      padding-top: 20px;
+      padding-bottom: 92px;
     }
 
     .hero-logo {
@@ -288,6 +293,18 @@
       font-weight: 800;
       letter-spacing: 0.18em;
       text-transform: uppercase;
+    }
+
+    .hero-content .button {
+      position: absolute;
+      left: 50%;
+      bottom: 16%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+
+    .hero-content .button:hover {
+      transform: translate(-50%, -2px);
     }
 
     /* =========================================================
@@ -585,6 +602,7 @@
       }
 
       .menu-toggle {
+        display: inline-flex;
         top: 14px;
         right: 16px;
         width: 44px;
@@ -627,7 +645,7 @@
       }
 
       .hero {
-        min-height: 430px;
+        min-height: 500px;
       }
 
       .hero::before {
@@ -639,11 +657,16 @@
             rgba(239, 249, 245, 0.08)
           ),
           url("images/hero-berglauf.jpg");
+        background-position: center, center center;
       }
 
       .hero-content {
-        padding-top: 42px;
-        padding-bottom: 42px;
+        padding-top: 20px;
+        padding-bottom: 74px;
+      }
+
+      .hero-content .button {
+        bottom: 12%;
       }
 
       .hero-logo {
