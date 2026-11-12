@@ -1,0 +1,285 @@
+/* =========================================
+   RACE&FUN THUMERSBACH
+   ANMELDESEITE – RONACHKOPF-CHALLENGE 2027
+   ========================================= */
+
+
+/* 1. FARBEN – HIER KANNST DU SPÄTER ÄNDERN */
+
+:root {
+    --farbe-dunkel: #123b35;
+    --farbe-gruen: #267b68;
+    --farbe-hell: #e9f3ef;
+    --farbe-hintergrund: #f5f8f6;
+    --farbe-text: #26332f;
+    --farbe-weiss: #ffffff;
+    --farbe-rot: #b42318;
+}
+
+
+/* 2. GRUNDEINSTELLUNGEN */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--farbe-hintergrund);
+    color: var(--farbe-text);
+    line-height: 1.6;
+}
+
+
+/* 3. ALLGEMEINE SEITENBREITE */
+
+.container {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 25px;
+}
+
+
+/* 4. KOPFBEREICH */
+
+.seitenkopf {
+    background: var(--farbe-dunkel);
+    color: var(--farbe-weiss);
+    text-align: center;
+    padding: 45px 20px;
+}
+
+.vereinsname {
+    font-size: 14px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.seitenkopf h1 {
+    font-size: 34px;
+    margin: 10px 0;
+}
+
+.untertitel {
+    color: #c5ddd5;
+    font-size: 16px;
+}
+
+
+/* 5. VERANSTALTUNGSINFORMATIONEN */
+
+.info-bereich {
+    text-align: center;
+    padding: 25px 10px;
+}
+
+.info-bereich h2 {
+    color: var(--farbe-dunkel);
+    font-size: 27px;
+}
+
+.startgeld-hinweis {
+    font-weight: bold;
+    color: var(--farbe-gruen);
+}
+
+.plaetze-hinweis {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* 6. FORMULAR-KARTE */
+
+.formular-bereich {
+    background: var(--farbe-weiss);
+    padding: 35px;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    margin-bottom: 40px;
+}
+
+.formular-bereich h3 {
+    color: var(--farbe-dunkel);
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--farbe-hell);
+}
+
+.formular-bereich h3:first-child {
+    margin-top: 0;
+}
+
+
+/* 7. EINGABEFELDER */
+
+.formulargruppe {
+    margin-bottom: 20px;
+}
+
+.formulargruppe label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.formulargruppe input,
+.formulargruppe select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #cbd5d1;
+    border-radius: 7px;
+    font-size: 16px;
+    background: var(--farbe-weiss);
+    color: var(--farbe-text);
+}
+
+.formulargruppe input:focus,
+.formulargruppe select:focus {
+    outline: 2px solid var(--farbe-gruen);
+    border-color: var(--farbe-gruen);
+}
+
+
+/* 8. HINWEISTEXTE */
+
+.kleiner-hinweis {
+    font-size: 14px;
+    color: #596861;
+    margin-top: -8px;
+}
+
+
+/* 9. CHECKBOXEN UND EINWILLIGUNGEN */
+
+.checkboxgruppe {
+    margin: 18px 0;
+    padding: 15px;
+    background: var(--farbe-hintergrund);
+    border-radius: 8px;
+}
+
+.checkboxgruppe label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.checkboxgruppe input {
+    margin-top: 5px;
+    flex-shrink: 0;
+    width: 17px;
+    height: 17px;
+    accent-color: var(--farbe-gruen);
+}
+
+.elternbereich {
+    margin-top: 25px;
+    padding: 20px;
+    border: 1px solid var(--farbe-gruen);
+    border-radius: 8px;
+    background: var(--farbe-hell);
+}
+
+.elternbereich h4 {
+    color: var(--farbe-dunkel);
+    margin-top: 0;
+}
+
+
+/* 10. ABSENDEN-BEREICH */
+
+.absenden-bereich {
+    margin-top: 30px;
+}
+
+.pflichtfeld-hinweis {
+    font-size: 13px;
+    color: #596861;
+}
+
+button {
+    width: 100%;
+    padding: 16px;
+    background: var(--farbe-gruen);
+    color: var(--farbe-weiss);
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: var(--farbe-dunkel);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* 11. RÜCKMELDUNGEN */
+
+#rueckmeldung {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#rueckmeldung.erfolg {
+    color: var(--farbe-gruen);
+}
+
+#rueckmeldung.fehler {
+    color: var(--farbe-rot);
+}
+
+
+/* 12. FUSSBEREICH */
+
+.seitenfuss {
+    background: var(--farbe-dunkel);
+    color: var(--farbe-weiss);
+    text-align: center;
+    padding: 25px 15px;
+    font-size: 13px;
+}
+
+.seitenfuss p {
+    margin: 4px;
+}
+
+
+/* 13. DARSTELLUNG AUF HANDYS */
+
+@media (max-width: 600px) {
+
+    .seitenkopf {
+        padding: 35px 15px;
+    }
+
+    .seitenkopf h1 {
+        font-size: 26px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .formular-bereich {
+        padding: 22px 18px;
+    }
+
+    .info-bereich h2 {
+        font-size: 23px;
+    }
+}
