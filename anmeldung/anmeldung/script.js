@@ -190,33 +190,35 @@ formular.addEventListener("submit", async function(event) {
     anmeldebutton.textContent = "Anmeldung wird übermittelt ...";
 
 
-    /* 7.3. DATEN AN GOOGLE SENDEN */
+      /* 7.3. DATEN AN VERCEL SENDEN */
 
     try {
 
-        await fetch(GOOGLE_SCRIPT_URL, {
+        const antwort = await fetch("/api/anmeldung", {
 
             method: "POST",
 
-            // Verhindert eine zusätzliche CORS-Prüfanfrage
-            mode: "no-cors",
-
             headers: {
-                "Content-Type": "text/plain;charset=utf-8"
+                "Content-Type": "application/json"
             },
 
             body: JSON.stringify(daten)
         });
 
-        /*
-         WICHTIG:
-         Bei no-cors können wir die Antwort von Google nicht lesen.
-         Daher dürfen wir hier noch keine erfolgreiche Anmeldung anzeigen.
-         Die zuverlässige Bestätigung bauen wir im nächsten Schritt ein.
-        */
+        const ergebnis = await antwort.json();
+
+        if (!antwort.ok || !ergebnis.erfolg) {
+
+            zeigeRueckmeldung(
+                ergebnis.nachricht || "Die Anmeldung konnte nicht gespeichert werden.",
+                false
+            );
+
+            return;
+        }
 
         zeigeRueckmeldung(
-            "Die Übermittlung wurde gestartet. Bitte noch auf die endgültige Bestätigung warten.",
+            "Deine Anmeldung war erfolgreich! Du erhältst in Kürze eine Bestätigung per E-Mail.",
             true
         );
 
@@ -231,9 +233,7 @@ formular.addEventListener("submit", async function(event) {
 
     } finally {
 
-        // Button wieder freigeben
         anmeldebutton.disabled = false;
         anmeldebutton.textContent = "Verbindlich anmelden";
-    }
 
-});
+    }
