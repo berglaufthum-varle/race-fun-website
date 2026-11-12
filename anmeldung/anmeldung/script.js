@@ -237,3 +237,4 @@ formular.addEventListener("submit", async function(event) {
         anmeldebutton.textContent = "Verbindlich anmelden";
 
     }
+});
