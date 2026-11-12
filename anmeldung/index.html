@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Anmeldung – Ronachkopf-Challenge 2027</title>
+
+    <!-- Gestaltung der Anmeldeseite -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Kopfbereich mit Vereinsname und Veranstaltung -->
+    <header class="seitenkopf">
+        <div class="container">
+            <p class="vereinsname">RACE&FUN THUMERSBACH</p>
+            <h1>Ronachkopf-Challenge 2027</h1>
+            <p class="untertitel">Wo Bewegung verbindet</p>
+        </div>
+    </header>
+
+
+    <!-- Hauptbereich der Anmeldung -->
+    <main class="container">
+
+        <!-- Veranstaltungsinformationen -->
+        <section class="info-bereich">
+            <h2>Deine Anmeldung</h2>
+
+            <p>
+                Samstag, 13. Februar 2027
+            </p>
+
+            <p>
+                Sei dabei und erlebe einen sportlichen Tag
+                am Ronachkopf!
+            </p>
+
+            <p class="startgeld-hinweis">
+                Startgeld: 20 € – Bezahlung vor Ort bei der Startnummernausgabe.
+            </p>
+
+            <p id="plaetze-hinweis" class="plaetze-hinweis">
+                Die Teilnehmerzahl ist auf 180 Personen begrenzt.
+            </p>
+        </section>
+
+
+        <!-- Das eigentliche Anmeldeformular -->
+        <section class="formular-bereich">
+
+            <form id="anmeldeformular">
+
+                <!-- Persönliche Daten -->
+                <h3>1. Persönliche Daten</h3>
+
+                <div class="formulargruppe">
+                    <label for="vorname">Vorname *</label>
+                    <input type="text" id="vorname" name="vorname" required>
+                </div>
+
+                <div class="formulargruppe">
+                    <label for="nachname">Nachname *</label>
+                    <input type="text" id="nachname" name="nachname" required>
+                </div>
+
+                <div class="formulargruppe">
+                    <label for="geburtsdatum">Geburtsdatum *</label>
+                    <input type="date" id="geburtsdatum" name="geburtsdatum" required>
+                </div>
+
+                <div class="formulargruppe">
+                    <label for="geschlecht">Geschlecht *</label>
+                    <select id="geschlecht" name="geschlecht" required>
+                        <option value="">Bitte auswählen</option>
+                        <option value="Damen">Damen</option>
+                        <option value="Herren">Herren</option>
+                    </select>
+                </div>
+
+                <div class="formulargruppe">
+                    <label for="email">E-Mail-Adresse *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="formulargruppe">
+                    <label for="verein">Verein (freiwillig)</label>
+                    <input type="text" id="verein" name="verein">
+                </div>
+
+
+                <!-- Auswahl der Wertung -->
+                <h3>2. Wertung</h3>
+
+                <div class="formulargruppe">
+                    <label for="wertung">In welcher Wertung möchtest du starten? *</label>
+
+                    <select id="wertung" name="wertung" required>
+                        <option value="">Bitte auswählen</option>
+                        <option value="Sportwertung">Sportwertung</option>
+                        <option value="Hobbywertung">Hobbywertung</option>
+                    </select>
+                </div>
+
+                <p class="kleiner-hinweis">
+                    Bei der Hobbywertung zählt die Mittelzeit.
+                </p>
+
+
+                <!-- Hinweise und Einwilligungen -->
+                <h3>3. Teilnahmebedingungen und Einwilligungen</h3>
+
+                <div class="checkboxgruppe">
+                    <label>
+                        <input type="checkbox" id="teilnahmebedingungen" required>
+                        Ich akzeptiere die Teilnahmebedingungen. *
+                    </label>
+                </div>
+
+                <div class="checkboxgruppe">
+                    <label>
+                        <input type="checkbox" id="fotoInfo" required>
+                        Ich habe die Foto- und Video-Information zur Kenntnis genommen. *
+                    </label>
+                </div>
+
+                <div class="checkboxgruppe">
+                    <label>
+                        <input type="checkbox" id="fotoEinwilligung">
+                        Ich willige freiwillig ein, dass Fotos und Videos von mir
+                        für Öffentlichkeitsarbeit und Berichterstattung verwendet werden dürfen.
+                    </label>
+                </div>
+
+                <!-- Zustimmung für minderjährige Teilnehmer -->
+                <div id="elternbereich" class="elternbereich" hidden>
+
+                    <h4>Zustimmung eines Erziehungsberechtigten</h4>
+
+                    <p>
+                        Teilnehmer unter 18 Jahren benötigen die Zustimmung
+                        eines Erziehungsberechtigten.
+                    </p>
+
+                    <div class="checkboxgruppe">
+                        <label>
+                            <input type="checkbox" id="erziehungsberechtigte">
+                            Ich bin Erziehungsberechtigter und stimme der Teilnahme zu. *
+                        </label>
+                    </div>
+
+                </div>
+
+
+                <!-- Absenden -->
+                <div class="absenden-bereich">
+
+                    <p class="pflichtfeld-hinweis">
+                        * Pflichtfelder
+                    </p>
+
+                    <button type="submit" id="anmeldebutton">
+                        Verbindlich anmelden
+                    </button>
+
+                    <p id="rueckmeldung" role="status"></p>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- Fußbereich -->
+    <footer class="seitenfuss">
+        <p>© Race&Fun Thumersbach</p>
+        <p>Ronachkopf-Challenge 2027</p>
+    </footer>
+
+
+    <!-- Funktionen der Anmeldung -->
+    <script src="script.js"></script>
+
+</body>
+</html>
