@@ -152,12 +152,7 @@ formular.addEventListener("submit", async function(event) {
         teilnahmebedingungen:
             document.getElementById("teilnahmebedingungen").checked,
 
-        fotoInfo:
-            document.getElementById("fotoInfo").checked,
-
-        fotoEinwilligung:
-            document.getElementById("fotoEinwilligung").checked,
-
+       
         erziehungsberechtigte:
             elternCheckbox.checked
     };
