@@ -451,27 +451,31 @@
       margin-top: 12px;
     }
 
-    .about-more summary {
+    .about-toggle {
       display: inline-block;
+      padding: 0;
+      border: 0;
+      background: transparent;
       color: var(--green);
+      font: inherit;
       font-weight: 800;
       cursor: pointer;
-      list-style: none;
+      touch-action: manipulation;
     }
 
-    .about-more summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .about-more summary::after {
+    .about-toggle[aria-expanded="false"]::after {
       content: " ↓";
     }
 
-    .about-more[open] summary::after {
+    .about-toggle[aria-expanded="true"]::after {
       content: " ↑";
     }
 
-    .about-more p:last-child {
+    .about-extra[hidden] {
+      display: none !important;
+    }
+
+    .about-extra p:last-child {
       margin-bottom: 0;
     }
 
@@ -510,9 +514,14 @@
 
     .slogan-card {
       align-self: center;
-      padding: 28px 16px;
+      justify-self: stretch;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 28px 12px;
       color: #247c70;
-      font-size: clamp(2rem, 2.5vw, 2.7rem);
+      font-size: clamp(2.4rem, 3vw, 3.2rem);
       font-weight: 900;
       font-style: italic;
       line-height: 1.2;
@@ -898,31 +907,35 @@
             Leidenschaft ist unsere Vision entstanden.
           </p>
 
-          <details class="about-more">
-            <summary>Weiterlesen</summary>
-            <p>
-              Unser Antrieb ist es, genau dieses Gefühl weiterzugeben: die
-              Freude am Draußensein, das Kribbeln vor dem Start, das
-              Durchhalten, wenn es anstrengend wird – und das unbeschreibliche
-              Glück im Ziel. Wir möchten Menschen jeden Alters und jeder
-              Leistungsstufe motivieren, ihre ganz persönliche Herausforderung
-              anzunehmen.
-            </p>
-            <p>
-              Bei unseren Rennen und sportlichen Events geht es nicht in erster
-              Linie um Zeiten, Siege oder Medaillen. Es geht um das Lachen am
-              Start, das gegenseitige Anfeuern auf der Strecke und das gemeinsame
-              Feiern im Ziel. Es geht darum, Erinnerungen zu schaffen – mit
-              Freundinnen und Freunden, mit der Familie oder als ganz
-              persönlicher Meilenstein.
-            </p>
-            <p>
-              Denn am Ende zählt nicht nur die Leistung.<br>
-              Es zählt das Erlebnis.<br>
-              Es zählt das Miteinander.<br>
-              Und die Freude an der Bewegung.
-            </p>
-          </details>
+          <div class="about-more">
+            <button class="about-toggle" type="button" aria-expanded="false" aria-controls="about-extra">
+              Weiterlesen
+            </button>
+            <div class="about-extra" id="about-extra" hidden>
+              <p>
+                Unser Antrieb ist es, genau dieses Gefühl weiterzugeben: die
+                Freude am Draußensein, das Kribbeln vor dem Start, das
+                Durchhalten, wenn es anstrengend wird – und das unbeschreibliche
+                Glück im Ziel. Wir möchten Menschen jeden Alters und jeder
+                Leistungsstufe motivieren, ihre ganz persönliche Herausforderung
+                anzunehmen.
+              </p>
+              <p>
+                Bei unseren Rennen und sportlichen Events geht es nicht in erster
+                Linie um Zeiten, Siege oder Medaillen. Es geht um das Lachen am
+                Start, das gegenseitige Anfeuern auf der Strecke und das gemeinsame
+                Feiern im Ziel. Es geht darum, Erinnerungen zu schaffen – mit
+                Freundinnen und Freunden, mit der Familie oder als ganz
+                persönlicher Meilenstein.
+              </p>
+              <p>
+                Denn am Ende zählt nicht nur die Leistung.<br>
+                Es zählt das Erlebnis.<br>
+                Es zählt das Miteinander.<br>
+                Und die Freude an der Bewegung.
+              </p>
+            </div>
+          </div>
         </div>
 
         <div class="activity-list">
@@ -1028,6 +1041,17 @@
   <!-- 8. KLEINES SCRIPT: aktuelles Jahr automatisch anzeigen -->
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Vereinsgeschichte auf- und zuklappen
+    const aboutToggle = document.querySelector(".about-toggle");
+    const aboutExtra = document.getElementById("about-extra");
+
+    aboutToggle.addEventListener("click", () => {
+      const isExpanded = aboutToggle.getAttribute("aria-expanded") === "true";
+      aboutToggle.setAttribute("aria-expanded", String(!isExpanded));
+      aboutToggle.textContent = isExpanded ? "Weiterlesen" : "Weniger anzeigen";
+      aboutExtra.hidden = isExpanded;
+    });
 
     // Hamburger-Menü auf Handys öffnen und beim Link-Klick schließen
     const menuToggle = document.querySelector(".menu-toggle");
