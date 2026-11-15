@@ -170,6 +170,15 @@ body {
     gap: 10px;
     font-size: 14px;
     cursor: pointer;
+    flex-wrap: wrap;
+}
+
+.checkboxgruppe label input {
+    flex: 0 0 17px;
+}
+
+.checkboxgruppe label a {
+    display: inline;
 }
 
 .checkboxgruppe input {
