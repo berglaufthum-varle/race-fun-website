@@ -436,14 +436,42 @@
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1.1fr 1fr 0.8fr;
-      align-items: center;
+      grid-template-columns: 1.1fr 1fr;
+      align-items: start;
       gap: 34px;
     }
 
     .about-copy p {
       color: var(--muted);
       font-size: 0.94rem;
+    }
+
+    .about-more {
+      margin-top: 12px;
+    }
+
+    .about-more summary {
+      display: inline-block;
+      color: var(--green);
+      font-weight: 800;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .about-more summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .about-more summary::after {
+      content: " ↓";
+    }
+
+    .about-more[open] summary::after {
+      content: " ↑";
+    }
+
+    .about-more p:last-child {
+      margin-bottom: 0;
     }
 
     .activity-list {
@@ -843,6 +871,10 @@
           </div>
         </article>
 
+        <div class="slogan-card">
+          Gemeinsam<br>mehr erreichen!
+          <span aria-hidden="true">⌁⌁⌁</span>
+        </div>
       </div>
     </section>
 
@@ -853,11 +885,43 @@
           <div class="eyebrow">Über Race&Fun Thumersbach</div>
           <h2>Mehr als nur ein Verein</h2>
           <p>
-            Wir sind ein Sport- und Freizeitverein aus Thumersbach und eine
-            Gruppe von Freunden, die gemeinsam sportliche Herausforderungen
-            erleben und die Freude an der Bewegung in unserer Region teilen.
+            Wir sind ein Team aus begeisterten Hobbysportlern, die die Liebe
+            zur Bewegung verbindet. Die Berge sind unser Zuhause, der Sport
+            unsere gemeinsame Sprache.
           </p>
-          <a class="text-link" href="#links">Mehr über uns →</a>
+          <p>
+            Wir sind in Thumersbach aufgewachsen – mit den Bergen vor der
+            Haustür und der Natur als unserem größten Spielplatz. Schon früh
+            haben wir gelernt, was es heißt, sich draußen zu bewegen, Grenzen
+            zu spüren und gemeinsam über sich hinauszuwachsen. Aus dieser
+            Leidenschaft ist unsere Vision entstanden.
+          </p>
+
+          <details class="about-more">
+            <summary>Weiterlesen</summary>
+            <p>
+              Unser Antrieb ist es, genau dieses Gefühl weiterzugeben: die
+              Freude am Draußensein, das Kribbeln vor dem Start, das
+              Durchhalten, wenn es anstrengend wird – und das unbeschreibliche
+              Glück im Ziel. Wir möchten Menschen jeden Alters und jeder
+              Leistungsstufe motivieren, ihre ganz persönliche Herausforderung
+              anzunehmen.
+            </p>
+            <p>
+              Bei unseren Rennen und sportlichen Events geht es nicht in erster
+              Linie um Zeiten, Siege oder Medaillen. Es geht um das Lachen am
+              Start, das gegenseitige Anfeuern auf der Strecke und das gemeinsame
+              Feiern im Ziel. Es geht darum, Erinnerungen zu schaffen – mit
+              Freundinnen und Freunden, mit der Familie oder als ganz
+              persönlicher Meilenstein.
+            </p>
+            <p>
+              Denn am Ende zählt nicht nur die Leistung.<br>
+              Es zählt das Erlebnis.<br>
+              Es zählt das Miteinander.<br>
+              Und die Freude an der Bewegung.
+            </p>
+          </details>
         </div>
 
         <div class="activity-list">
