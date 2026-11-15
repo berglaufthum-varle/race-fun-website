@@ -329,6 +329,7 @@
     .event-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: center;
       gap: 18px;
     }
 
@@ -436,9 +437,9 @@
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1.1fr 1fr;
+      grid-template-columns: 1.4fr 1fr;
       align-items: start;
-      gap: 34px;
+      gap: 42px;
     }
 
     .about-copy p {
@@ -508,14 +509,14 @@
     }
 
     .slogan-card {
-      padding: 28px 20px;
+      align-self: center;
+      padding: 28px 16px;
       color: #247c70;
-      font-size: 1.7rem;
+      font-size: clamp(2rem, 2.5vw, 2.7rem);
       font-weight: 900;
       font-style: italic;
-      line-height: 1.15;
+      line-height: 1.2;
       text-align: center;
-      transform: rotate(-2deg);
     }
 
     .slogan-card span {
@@ -950,10 +951,6 @@
           </div>
         </div>
 
-        <div class="slogan-card">
-          Gemeinsam<br>mehr erreichen!
-          <span aria-hidden="true">⌁⌁⌁</span>
-        </div>
       </div>
     </section>
 
