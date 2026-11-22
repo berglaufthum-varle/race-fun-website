@@ -53,13 +53,11 @@ body {
 
 .veranstaltungslogo {
     display: block;
-    width: min(290px, 75vw);
-    max-height: 190px;
+    width: min(380px, 85vw);
+    max-height: none;
     height: auto;
     object-fit: contain;
-    margin: 8px auto 10px;
-    position: relative;
-    left: 0;
+    margin: 8px auto 0;
 }
 
 .vereinsname {
