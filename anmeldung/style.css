@@ -53,8 +53,8 @@ body {
 
 .veranstaltungslogo {
     display: block;
-    width: min(210px, 60vw);
-    max-height: 140px;
+    width: min(290px, 75vw);
+    max-height: 190px;
     height: auto;
     object-fit: contain;
     margin: 8px auto 10px;
