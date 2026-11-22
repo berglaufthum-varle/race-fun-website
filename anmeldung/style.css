@@ -48,33 +48,38 @@ body {
     background: var(--farbe-dunkel);
     color: var(--farbe-weiss);
     text-align: center;
-    padding: 45px 20px;
+    padding: 18px 15px;
+}
+
+.seitenkopf .container {
+    padding: 0;
 }
 
 .veranstaltungslogo {
     display: block;
-    width: min(380px, 85vw);
-    max-height: none;
+    width: min(320px, 75vw);
+    max-height: 150px;
     height: auto;
     object-fit: contain;
-    margin: 8px auto 0;
+    margin: 4px auto 2px;
 }
 
 .vereinsname {
     font-size: 14px;
     letter-spacing: 3px;
     font-weight: bold;
-    margin-bottom: 12px;
+    margin: 0 0 4px;
 }
 
 .seitenkopf h1 {
     font-size: 34px;
-    margin: 10px 0;
+    margin: 4px 0;
 }
 
 .untertitel {
     color: #c5ddd5;
     font-size: 16px;
+    margin: 2px 0 0;
 }
 
 
@@ -282,7 +287,7 @@ button:disabled {
 @media (max-width: 600px) {
 
     .seitenkopf {
-        padding: 35px 15px;
+        padding: 16px 15px;
     }
 
     .seitenkopf h1 {
