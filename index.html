@@ -540,6 +540,61 @@
     }
 
     /* =========================================================
+       BERGLAUF-FOTOGALERIE
+       ========================================================= */
+    .berglauf-gallery {
+      margin-top: 42px;
+      padding-top: 30px;
+      border-top: 1px solid #c9e0d8;
+    }
+
+    .berglauf-gallery-top {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .berglauf-gallery h3 {
+      margin: 0;
+      color: var(--deep);
+      font-size: 1.35rem;
+    }
+
+    .berglauf-gallery-hint {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .berglauf-gallery-track {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      padding: 2px 2px 12px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: #9bcdbd transparent;
+    }
+
+    .berglauf-gallery-track img {
+      display: block;
+      flex: 0 0 calc((100% - 56px) / 5);
+      width: calc((100% - 56px) / 5);
+      height: 190px;
+      border-radius: 12px;
+      object-fit: cover;
+      scroll-snap-align: start;
+      box-shadow: 0 3px 12px #183d4d12;
+    }
+
+    .berglauf-gallery-link {
+      margin-top: 14px;
+    }
+
+    /* =========================================================
        7. SPONSOREN UND UNTERSTÜTZER
        ========================================================= */
     .partners {
@@ -759,6 +814,23 @@
         border-left: 0;
       }
 
+      .berglauf-gallery {
+        margin-top: 30px;
+        padding-top: 24px;
+      }
+
+      .berglauf-gallery-top {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .berglauf-gallery-track img {
+        flex: 0 0 82%;
+        width: 82%;
+        height: 230px;
+      }
+
       .slogan-card {
         display: none;
       }
@@ -974,6 +1046,27 @@
           </div>
         </div>
 
+      </div>
+
+      <div class="wrap berglauf-gallery">
+        <div class="berglauf-gallery-top">
+          <div>
+            <h3>Berglauf Thumersbach 2026</h3>
+            <p class="berglauf-gallery-hint">Ein paar Eindrücke vom Lauf – am Handy einfach seitlich wischen.</p>
+          </div>
+        </div>
+
+        <div class="berglauf-gallery-track" aria-label="Fotos vom Berglauf Thumersbach 2026">
+          <img src="images/berglauf26-1.jpg" alt="Berglauf Thumersbach 2026 – Foto 1" loading="lazy">
+          <img src="images/berglauf26-2.jpg" alt="Berglauf Thumersbach 2026 – Foto 2" loading="lazy">
+          <img src="images/berglauf26-3.JPG" alt="Berglauf Thumersbach 2026 – Foto 3" loading="lazy">
+          <img src="images/berglauf26-4.jpg" alt="Berglauf Thumersbach 2026 – Foto 4" loading="lazy">
+          <img src="images/berglauf26-5.jpg" alt="Berglauf Thumersbach 2026 – Foto 5" loading="lazy">
+        </div>
+
+        <a class="button button-primary berglauf-gallery-link" href="https://photos.google.com/share/AF1QipMBDUllX0uM82aZfERGe_zkHF9t7Zlhah-zCmrRlNr0PXwyVqFyOHmNHOvR33CscA?key=MDRFZlAzaS13M0QyaFBnVkgxREdybnBCdGlUMV9B" target="_blank" rel="noopener">
+          Alle Fotos ansehen →
+        </a>
       </div>
     </section>
 
