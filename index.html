@@ -582,13 +582,74 @@
 
     .berglauf-gallery-track img {
       display: block;
-      flex: 0 0 calc((100% - 56px) / 5);
-      width: calc((100% - 56px) / 5);
-      height: 190px;
+      flex: 0 0 calc((100% - 28px) / 3);
+      width: calc((100% - 28px) / 3);
+      height: 250px;
       border-radius: 12px;
       object-fit: cover;
       scroll-snap-align: start;
       box-shadow: 0 3px 12px #183d4d12;
+      cursor: zoom-in;
+    }
+
+    .photo-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 56px 24px 24px;
+      background: rgba(8, 20, 26, 0.94);
+    }
+
+    .photo-lightbox[hidden] {
+      display: none;
+    }
+
+    .photo-lightbox img {
+      display: block;
+      max-width: min(1100px, 100%);
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .photo-lightbox-close,
+    .photo-lightbox-prev,
+    .photo-lightbox-next {
+      position: absolute;
+      border: 0;
+      color: white;
+      background: rgba(255, 255, 255, 0.16);
+      cursor: pointer;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .photo-lightbox-close {
+      top: 16px;
+      right: 20px;
+      font-size: 30px;
+    }
+
+    .photo-lightbox-prev {
+      left: 18px;
+      top: 50%;
+    }
+
+    .photo-lightbox-next {
+      right: 18px;
+      top: 50%;
+    }
+
+    body.photo-lightbox-open {
+      overflow: hidden;
     }
 
     .berglauf-gallery-link {
@@ -834,9 +895,21 @@
       }
 
       .berglauf-gallery-track img {
-        flex: 0 0 82%;
-        width: 82%;
-        height: 230px;
+        flex: 0 0 88%;
+        width: 88%;
+        height: 280px;
+      }
+
+      .photo-lightbox {
+        padding: 58px 12px 16px;
+      }
+
+      .photo-lightbox-prev {
+        left: 8px;
+      }
+
+      .photo-lightbox-next {
+        right: 8px;
       }
 
       .slogan-card {
@@ -1080,6 +1153,13 @@
           Urheberrecht. Copyright © Edith Danzer, Conny Faistauer und Nikolaus Faistauer.
         </p>
       </div>
+
+      <div class="photo-lightbox" id="photo-lightbox" hidden role="dialog" aria-modal="true" aria-label="Fotogalerie">
+        <button class="photo-lightbox-close" type="button" aria-label="Schließen">&times;</button>
+        <button class="photo-lightbox-prev" type="button" aria-label="Vorheriges Foto">&#8249;</button>
+        <img src="" alt="">
+        <button class="photo-lightbox-next" type="button" aria-label="Nächstes Foto">&#8250;</button>
+      </div>
     </section>
 
     <!-- 5. SPONSOREN UND UNTERSTÜTZER
@@ -1185,6 +1265,46 @@
         menuToggle.setAttribute("aria-label", "Menü öffnen");
         navigation.classList.remove("is-open");
       });
+    });
+
+    // Berglauf-Fotos groß anzeigen und durchblättern
+    const galleryPhotos = Array.from(document.querySelectorAll(".berglauf-gallery-track img"));
+    const lightbox = document.getElementById("photo-lightbox");
+    const lightboxImage = lightbox.querySelector("img");
+    let activePhoto = 0;
+
+    function showPhoto(index) {
+      activePhoto = (index + galleryPhotos.length) % galleryPhotos.length;
+      lightboxImage.src = galleryPhotos[activePhoto].src;
+      lightboxImage.alt = galleryPhotos[activePhoto].alt;
+    }
+
+    function closeLightbox() {
+      lightbox.hidden = true;
+      document.body.classList.remove("photo-lightbox-open");
+    }
+
+    galleryPhotos.forEach((photo, index) => {
+      photo.addEventListener("click", () => {
+        showPhoto(index);
+        lightbox.hidden = false;
+        document.body.classList.add("photo-lightbox-open");
+      });
+    });
+
+    lightbox.querySelector(".photo-lightbox-close").addEventListener("click", closeLightbox);
+    lightbox.querySelector(".photo-lightbox-prev").addEventListener("click", () => showPhoto(activePhoto - 1));
+    lightbox.querySelector(".photo-lightbox-next").addEventListener("click", () => showPhoto(activePhoto + 1));
+
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (lightbox.hidden) return;
+      if (event.key === "Escape") closeLightbox();
+      if (event.key === "ArrowLeft") showPhoto(activePhoto - 1);
+      if (event.key === "ArrowRight") showPhoto(activePhoto + 1);
     });
   </script>
 </body>
