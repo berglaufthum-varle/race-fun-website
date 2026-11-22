@@ -61,8 +61,8 @@ body {
     max-height: 150px;
     height: auto;
     object-fit: contain;
-    margin: 4px auto 2px;
-    transform: scale(1.45);
+    margin: 4px auto -4px;
+    transform: scale(1.5);
 }
 
 .vereinsname {
@@ -74,7 +74,7 @@ body {
 
 .seitenkopf h1 {
     font-size: 34px;
-    margin: 4px 0;
+    margin: 0 0 4px;
 }
 
 .untertitel {
