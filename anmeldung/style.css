@@ -62,6 +62,7 @@ body {
     height: auto;
     object-fit: contain;
     margin: 4px auto 2px;
+    transform: scale(1.45);
 }
 
 .vereinsname {
