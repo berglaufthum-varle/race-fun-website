@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123b35">
+  <meta name="description" content="Alle Informationen zur Ronachkopf Challenge 2027 von Race&Fun Thumersbach.">
+  <title>Ronachkopf Challenge 2027 – Race&Fun Thumersbach</title>
+  <style>
+    :root {
+      --dark: #123b35;
+      --green: #267b68;
+      --mint: #75d3b8;
+      --pale: #e9f3ef;
+      --bg: #f5f8f6;
+      --text: #26332f;
+      --muted: #596861;
+      --white: #fff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    .topbar {
+      padding: 13px 20px;
+      background: var(--dark);
+      color: var(--white);
+      text-align: center;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 3px;
+    }
+    .hero {
+      padding: 28px 20px 38px;
+      background: linear-gradient(145deg, #123b35, #267b68);
+      color: var(--white);
+      text-align: center;
+    }
+    .logo {
+      display: block;
+      width: min(100%, 430px);
+      height: 235px;
+      margin: -8px auto -42px;
+      background: url("../images/Ronachkopf.png") center / auto 300px no-repeat;
+    }
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      line-height: 1.12;
+    }
+    .hero p {
+      margin: 10px 0 0;
+      color: #d5eee5;
+      font-size: 1.05rem;
+    }
+    .wrap {
+      width: min(900px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+    .intro {
+      padding: 34px 0 20px;
+      text-align: center;
+    }
+    .date {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 30px;
+      background: var(--pale);
+      color: var(--green);
+      font-weight: 800;
+    }
+    h2 {
+      margin: 10px 0 8px;
+      color: var(--dark);
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      line-height: 1.2;
+    }
+    .intro p { max-width: 680px; margin: 10px auto; color: var(--muted); }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin: 20px 0 28px;
+    }
+    .card {
+      padding: 22px;
+      border: 1px solid #e0eae5;
+      border-radius: 14px;
+      background: var(--white);
+      box-shadow: 0 4px 15px #173d4d0b;
+    }
+    .card h3 { margin: 0 0 8px; color: var(--green); font-size: 1.12rem; }
+    .card p { margin: 0; color: var(--muted); }
+    .schedule {
+      margin: 0 0 30px;
+      padding: 24px;
+      border-radius: 14px;
+      background: var(--white);
+      box-shadow: 0 4px 15px #173d4d0b;
+    }
+    .schedule ul { margin: 14px 0 0; padding: 0; list-style: none; }
+    .schedule li {
+      display: flex;
+      gap: 14px;
+      padding: 10px 0;
+      border-bottom: 1px solid #edf2ef;
+    }
+    .schedule li:last-child { border-bottom: 0; }
+    .schedule strong { min-width: 145px; color: var(--dark); }
+    .fee {
+      margin: 0 0 28px;
+      padding: 20px;
+      border-radius: 14px;
+      background: var(--pale);
+      text-align: center;
+    }
+    .fee strong { color: var(--dark); font-size: 1.25rem; }
+    .fee p { margin: 4px 0 0; color: var(--muted); }
+    .actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 0 0 42px;
+    }
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      padding: 12px 22px;
+      border: 1px solid var(--green);
+      border-radius: 30px;
+      background: var(--green);
+      color: var(--white);
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .button.secondary { background: transparent; color: var(--green); }
+    footer {
+      padding: 22px 16px;
+      background: var(--dark);
+      color: #e7f2ef;
+      text-align: center;
+      font-size: 13px;
+    }
+    footer a { color: #e7f2ef; }
+    @media (max-width: 620px) {
+      .cards { grid-template-columns: 1fr; }
+      .logo { height: 205px; background-size: auto 260px; margin-bottom: -34px; }
+      .schedule { padding: 18px; }
+      .schedule li { display: block; }
+      .schedule strong { display: block; min-width: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">RACE&FUN THUMERSBACH</div>
+  <header class="hero">
+    <div class="logo" role="img" aria-label="Ronachkopf Challenge Logo"></div>
+    <h1>Ronachkopf Challenge 2027</h1>
+    <p>Wo Bewegung verbindet</p>
+  </header>
+
+  <main class="wrap">
+    <section class="intro">
+      <span class="date">Samstag, 13. Februar 2027</span>
+      <h2>Zwei Wertungen. Ein gemeinsames Ziel.</h2>
+      <p>Stell dich deiner sportlichen Herausforderung am Ronachkopf! Ob ambitioniert oder aus Freude an der Bewegung – bei der Ronachkopf Challenge zählt das gemeinsame Erlebnis in den Bergen.</p>
+    </section>
+
+    <section class="cards" aria-label="Veranstaltungsinformationen">
+      <article class="card">
+        <h3>Sportwertung</h3>
+        <p>Für alle, die auf Zeit unterwegs sind. In der Sportwertung zählt die <strong>Bestzeit</strong>.</p>
+      </article>
+      <article class="card">
+        <h3>Hobbywertung</h3>
+        <p>Hier steht das Erlebnis im Vordergrund. Die Wertung erfolgt über die <strong>Mittelzeit</strong>.</p>
+      </article>
+    </section>
+
+    <section class="schedule">
+      <h2>Ort &amp; Ablauf</h2>
+      <ul>
+        <li><strong>Treffpunkt</strong><span>Parkplatz Ronachkopf, Thumersbach</span></li>
+        <li><strong>Startnummernausgabe</strong><span>Ab 11:30 Uhr am Parkplatz Ronachkopf</span></li>
+        <li><strong>Start</strong><span>Am Parkplatz Ronachkopf</span></li>
+        <li><strong>Ziel</strong><span>Am Gipfel des Ronachkopfs</span></li>
+        <li><strong>Siegerehrung</strong><span>Ab 18:00 Uhr in der Enzianhütte</span></li>
+      </ul>
+    </section>
+
+    <section class="fee">
+      <strong>Startgeld: 20 €</strong>
+      <p>Bezahlung vor Ort bei der Startnummernausgabe. Die Teilnehmerzahl ist auf 180 Personen begrenzt.</p>
+    </section>
+
+    <div class="actions">
+      <a class="button" href="/anmeldung/">Jetzt anmelden →</a>
+      <a class="button secondary" href="/">Zurück zur Startseite</a>
+    </div>
+  </main>
+
+  <footer>
+    <strong>Race&amp;Fun Thumersbach</strong><br>
+    Sport- und Freizeitverein Race&amp;Fun Thumersbach · ZVR-Nr. 1064348748<br>
+    Entfeldweg 13, 5700 Zell am See · <a href="mailto:info@race-fun.com">Kontakt</a>
+  </footer>
+</body>
+</html>
