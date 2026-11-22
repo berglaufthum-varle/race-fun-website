@@ -671,11 +671,43 @@
       padding-bottom: 42px;
     }
 
+    .partner-carousel {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr) 42px;
+      align-items: center;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .partner-viewport {
+      min-width: 0;
+      overflow: hidden;
+    }
+
     .partner-logos {
       display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 22px 18px;
-      margin-top: 28px;
+      grid-auto-flow: column;
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      grid-auto-columns: calc((100% - 72px) / 5);
+      gap: 14px 18px;
+      scroll-behavior: smooth;
+    }
+
+    .partner-arrow {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: #ffffff;
+      color: var(--deep);
+      font-size: 1.6rem;
+      line-height: 1;
+      cursor: pointer;
+      box-shadow: 0 2px 8px #183d4d12;
+    }
+
+    .partner-arrow:hover {
+      background: var(--pale);
     }
 
     .partner-card {
@@ -967,6 +999,19 @@
         grid-template-columns: 1fr;
       }
 
+      .partner-carousel {
+        display: block;
+        margin-top: 28px;
+      }
+
+      .partner-viewport {
+        overflow: visible;
+      }
+
+      .partner-arrow {
+        display: none;
+      }
+
       .partner-logos {
         display: flex;
         gap: 14px;
@@ -1215,6 +1260,9 @@
       <div class="eyebrow">Unsere Partner</div>
       <h2>Sponsoren und Unterstützer</h2>
 
+      <div class="partner-carousel">
+        <button class="partner-arrow" type="button" aria-label="Vorherige Sponsoren" id="partner-prev">‹</button>
+        <div class="partner-viewport" id="partner-viewport">
       <div class="partner-logos" aria-label="Unsere Sponsoren und Unterstützer">
         <div class="partner-card"><div class="partner-logo-image" role="img" aria-label="SMS Group GmbH"></div><strong>SMS Group GmbH</strong></div>
         <div class="partner-card"><div class="partner-logo-image" role="img" aria-label="Seewirt · Zell am See"></div><strong>Seewirt · Zell am See</strong></div>
@@ -1237,6 +1285,9 @@
         <div class="partner-card"><div class="partner-logo-image" role="img" aria-label="Schmittenhöhe Zell am See"></div><strong>Schmittenhöhe Zell am See</strong></div>
         <div class="partner-card"><div class="partner-logo-image" role="img" aria-label="HTB Baugesellschaft"></div><strong>HTB Baugesellschaft</strong></div>
         <div class="partner-card"><div class="partner-logo-image" role="img" aria-label="MTM Medien- & Elektrotechnik Moser"></div><strong>MTM Medien- & Elektrotechnik Moser</strong></div>
+      </div>
+        </div>
+        <button class="partner-arrow" type="button" aria-label="Weitere Sponsoren" id="partner-next">›</button>
       </div>
       <p class="partner-note">Vielen Dank an alle Sponsoren und Unterstützer!</p>
     </section>
@@ -1299,6 +1350,15 @@
   <!-- 8. KLEINES SCRIPT: aktuelles Jahr automatisch anzeigen -->
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Sponsoren am PC in zweireihigen Gruppen durchblättern
+    const partnerViewport = document.getElementById("partner-viewport");
+    document.getElementById("partner-prev").addEventListener("click", () => {
+      partnerViewport.scrollBy({ left: -partnerViewport.clientWidth, behavior: "smooth" });
+    });
+    document.getElementById("partner-next").addEventListener("click", () => {
+      partnerViewport.scrollBy({ left: partnerViewport.clientWidth, behavior: "smooth" });
+    });
 
     // Vereinsgeschichte auf- und zuklappen
     const aboutToggle = document.querySelector(".about-toggle");
