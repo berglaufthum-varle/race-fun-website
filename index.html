@@ -672,28 +672,64 @@
     }
 
     .partner-logos {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 18px;
-      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 22px 18px;
+      margin-top: 28px;
     }
 
-    .partner-placeholder {
-      min-width: 120px;
-      padding: 10px 18px;
-      border-right: 1px solid var(--line);
-      color: #61717a;
-      font-size: 0.95rem;
-      font-weight: 800;
+    .partner-card {
+      min-width: 0;
+      padding: 12px 10px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #ffffff;
       text-align: center;
     }
 
+    .partner-logo-image {
+      width: 100%;
+      aspect-ratio: 320 / 230;
+      background-image: url("images/race-fun-sponsoren.webp");
+      background-repeat: no-repeat;
+      background-size: 500% 500%;
+    }
+
+    .partner-card strong {
+      display: block;
+      margin-top: 8px;
+      color: var(--deep);
+      font-size: 0.84rem;
+      line-height: 1.3;
+    }
+
+    .partner-card:nth-child(1) .partner-logo-image { background-position: 0% 0%; }
+    .partner-card:nth-child(2) .partner-logo-image { background-position: 25% 0%; }
+    .partner-card:nth-child(3) .partner-logo-image { background-position: 50% 0%; }
+    .partner-card:nth-child(4) .partner-logo-image { background-position: 75% 0%; }
+    .partner-card:nth-child(5) .partner-logo-image { background-position: 100% 0%; }
+    .partner-card:nth-child(6) .partner-logo-image { background-position: 0% 25%; }
+    .partner-card:nth-child(7) .partner-logo-image { background-position: 25% 25%; }
+    .partner-card:nth-child(8) .partner-logo-image { background-position: 50% 25%; }
+    .partner-card:nth-child(9) .partner-logo-image { background-position: 75% 25%; }
+    .partner-card:nth-child(10) .partner-logo-image { background-position: 100% 25%; }
+    .partner-card:nth-child(11) .partner-logo-image { background-position: 0% 50%; }
+    .partner-card:nth-child(12) .partner-logo-image { background-position: 25% 50%; }
+    .partner-card:nth-child(13) .partner-logo-image { background-position: 50% 50%; }
+    .partner-card:nth-child(14) .partner-logo-image { background-position: 75% 50%; }
+    .partner-card:nth-child(15) .partner-logo-image { background-position: 100% 50%; }
+    .partner-card:nth-child(16) .partner-logo-image { background-position: 0% 75%; }
+    .partner-card:nth-child(17) .partner-logo-image { background-position: 25% 75%; }
+    .partner-card:nth-child(18) .partner-logo-image { background-position: 50% 75%; }
+    .partner-card:nth-child(19) .partner-logo-image { background-position: 75% 75%; }
+    .partner-card:nth-child(20) .partner-logo-image { background-position: 100% 75%; }
+    .partner-card:nth-child(21) .partner-logo-image { background-position: 0% 100%; }
+
     .partner-note {
+      margin-top: 18px;
       color: var(--muted);
-      font-size: 0.78rem;
-      font-weight: 500;
+      font-size: 0.82rem;
+      text-align: center;
     }
 
     /* =========================================================
@@ -932,13 +968,23 @@
       }
 
       .partner-logos {
-        justify-content: center;
+        display: flex;
+        gap: 14px;
+        overflow-x: auto;
+        padding: 4px 2px 14px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
       }
 
-      .partner-placeholder {
-        min-width: 40%;
-        border-right: 0;
-        border-bottom: 1px solid var(--line);
+      .partner-card {
+        flex: 0 0 82%;
+        scroll-snap-align: start;
+        padding: 14px 18px;
+      }
+
+      .partner-card strong {
+        font-size: 0.95rem;
       }
     }
 
@@ -1169,14 +1215,30 @@
       <div class="eyebrow">Unsere Partner</div>
       <h2>Sponsoren und Unterstützer</h2>
 
-      <div class="partner-logos">
-        <div class="partner-placeholder">Zell am See</div>
-        <div class="partner-placeholder">SalzburgerLand</div>
-        <div class="partner-placeholder">Raiffeisen</div>
-        <div class="partner-placeholder">Enzianhütte</div>
-        <div class="partner-placeholder">Bründl Sports</div>
-        <div class="partner-placeholder partner-note">Euer Logo<br>könnte hier stehen</div>
+      <div class="partner-logos" aria-label="Unsere Sponsoren und Unterstützer">
+        <div class="partner-card"><div class="partner-logo-image" role="img" aria-label="SMS Group GmbH"></div><strong>SMS Group GmbH</strong></div>
+        <div class="partner-card"><div class="partner-logo-image" role="img" aria-label="Seewirt · Zell am See"></div><strong>Seewirt · Zell am See</strong></div>
+        <div class="partner-card"><div class="partner-logo-image" role="img" aria-label="Physio Andreas Lausch"></div><strong>Physio Andreas Lausch</strong></div>
+        <div class="partner-card"><div class="partner-logo-image" role="img" aria-label="Herzog Bau · Zell am See"></div><strong>Herzog Bau · Zell am See</strong></div>
+        <div class="partner-card"><div class="partner-logo-image" role="img" aria-label="Hofer Junior Karosserie"></div><strong>Hofer Junior Karosserie</strong></div>
+        <div class="partner-card"><div class="partner-logo-image" role="img" aria-label="Hagleitner · Innovative Hygiene"></div><strong>Hagleitner · Innovative Hygiene</strong></div>
+        <div class="partner-card"><div class="partner-logo-image" role="img" aria-label="Stiegl Brauerei"></div><strong>Stiegl Brauerei</strong></div>
+        <div class="partner-card"><div class="partner-logo-image" role="img" aria-label="Porsche Saalfelden"></div><strong>Porsche Saalfelden</strong></div>
+        <div class="partner-card"><div class="partner-logo-image" role="img" aria-label="Porsche Zell am See"></div><strong>Porsche Zell am See</strong></div>
+        <div class="partner-card"><div class="partner-logo-image" role="img" aria-label="D’Vawondt’n Zell am See"></div><strong>D’Vawondt’n Zell am See</strong></div>
+        <div class="partner-card"><div class="partner-logo-image" role="img" aria-label="Bergführer Zell am See-Kaprun"></div><strong>Bergführer Zell am See-Kaprun</strong></div>
+        <div class="partner-card"><div class="partner-logo-image" role="img" aria-label="Goaßstall Hinterglemm"></div><strong>Goaßstall Hinterglemm</strong></div>
+        <div class="partner-card"><div class="partner-logo-image" role="img" aria-label="Weitgasser Zell am See"></div><strong>Weitgasser Zell am See</strong></div>
+        <div class="partner-card"><div class="partner-logo-image" role="img" aria-label="Egger Josef Pflasterbau"></div><strong>Egger Josef Pflasterbau</strong></div>
+        <div class="partner-card"><div class="partner-logo-image" role="img" aria-label="Creativ Infekt"></div><strong>Creativ Infekt</strong></div>
+        <div class="partner-card"><div class="partner-logo-image" role="img" aria-label="Raiffeisenbank Pinzgau Mitte"></div><strong>Raiffeisenbank Pinzgau Mitte</strong></div>
+        <div class="partner-card"><div class="partner-logo-image" role="img" aria-label="Sinnesberger’s Markthalle"></div><strong>Sinnesberger’s Markthalle</strong></div>
+        <div class="partner-card"><div class="partner-logo-image" role="img" aria-label="Bründl Sports Kaprun"></div><strong>Bründl Sports Kaprun</strong></div>
+        <div class="partner-card"><div class="partner-logo-image" role="img" aria-label="Schmittenhöhe Zell am See"></div><strong>Schmittenhöhe Zell am See</strong></div>
+        <div class="partner-card"><div class="partner-logo-image" role="img" aria-label="HTB Baugesellschaft"></div><strong>HTB Baugesellschaft</strong></div>
+        <div class="partner-card"><div class="partner-logo-image" role="img" aria-label="MTM Medien- & Elektrotechnik Moser"></div><strong>MTM Medien- & Elektrotechnik Moser</strong></div>
       </div>
+      <p class="partner-note">Vielen Dank an alle Sponsoren und Unterstützer!</p>
     </section>
 
     <!-- 6. WICHTIGE LINKS
